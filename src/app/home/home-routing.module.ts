@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  {path:'',component:LandingPageComponent}
+  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path : 'home', component: LandingPageComponent},
+  {path:'login', loadChildren : ()=> import('../auth/auth.module').then(authMod=> authMod.AuthModule)}
 ];
 
 @NgModule({
