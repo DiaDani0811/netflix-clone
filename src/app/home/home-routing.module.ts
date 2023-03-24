@@ -5,18 +5,20 @@ import { FaqComponent } from './landing-page/faq/faq.component';
 import { FeaturesComponent } from './landing-page/features/features.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { PricingComponent } from './landing-page/pricing/pricing.component';
+import { SignupComponent } from '../auth/signup/signup.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path : 'home', component: LandingPageComponent,
   children:[
-    {path : 'home', component: LandingPageComponent},
-    {path:'features',component:FeaturesComponent},
-    {path:'pricing',component:PricingComponent},
-    {path:'faqs',component:FaqComponent},
-    {path:'about',component:AboutComponent}]
+    {path :'home#', component: LandingPageComponent},
+    {path:'tv-shows#',component:FeaturesComponent},
+    {path:'movies#',component:PricingComponent},
+    {path:'new#',component:FaqComponent},
+    {path:'upcoming#',component:AboutComponent}]
 },
-{path:'login', loadChildren:()=> import('../auth/auth.module').then(authMod=> authMod.AuthModule)}
+{path:'login', loadChildren:()=> import('../auth/auth.module').then(authMod=> authMod.AuthModule)},
+{path:"signup", component:SignupComponent}
 ];
 
 @NgModule({

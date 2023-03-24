@@ -3,28 +3,35 @@
     <div class="d-flex flex-wrap align-items-center justify-content-center">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
         <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg> -->
-        <img src="./assets/icons/netflixlogo.0.0.1466448626.jpg" width="50" height="40" class="appLogo" alt="">
+        <img src="./assets/PNG/netflix-logo-png-2562.png" width="120" height="40" class="appLogo" alt="">
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2" routerLink="home" routerLinkActive="active">Home</a></li>
-        <li><a href="#" class="nav-link px-2 " routerLink="features" routerLinkActive="active">Features</a></li>
-        <li><a href="#" class="nav-link px-2 " routerLink="pricing" routerLinkActive="active">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2 " routerLink="faqs" routerLinkActive="active">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2 " routerLink="about" routerLinkActive="active">About</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="home#" routerLinkActive="active">Home</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="tv-shows#" routerLinkActive="active">TV-Shows</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="movies#" routerLinkActive="active">Movie</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="new#" routerLinkActive="active">Newly Launched</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="upcoming#" routerLinkActive="active">Upcoming</a></li>
       </ul>
 
-      <ul class="d-flex" >
+      <ul class="d-flex">
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <i class=""></i> 
+          <i class=""></i>
           <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
         </form>
 
         <div class="text-end">
           <button type="button" class="btn btn-outline-light me-2" (click)="redirectToLoginPage()">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <button type="button" class="btn btn-danger" (click)="redirectToSignUpPage()">Sign-up</button>
         </div>
       </ul>
     </div>
   </div>
 </header>
+
+<div class="d-flex">
+  <img class="bg-image" src="./assets/images/collage-Movies.jpg" alt="">
+  <div class="d-flex" style="z-index:1; position: absolute;">
+    <h3 class="text-light">Get Started....</h3>
+  </div>
+</div>

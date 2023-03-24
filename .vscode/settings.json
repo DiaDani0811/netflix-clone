@@ -21,4 +21,9 @@
     "editor.selectionHighlight": true,
     "editor.smoothScrolling": true,
     "editor.snippetSuggestions": "bottom",
+    "html.format.enable": true,
+    "html.autoClosingTags": true,
+    "html.suggest.html5": true,
+    "highlight-matching-tag.showPath": true,
+    "typescript.autoClosingTags": true
     }
