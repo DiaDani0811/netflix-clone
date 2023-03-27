@@ -6,11 +6,11 @@
         <img src="./assets/PNG/netflix-logo-png-2562.png" width="120" height="40" class="appLogo" alt="">
       </a>
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/" class="nav-link px-2 " routerLink="home#" routerLinkActive="active">Home</a></li>
+        <!-- <li><a href="/" class="nav-link px-2 " routerLink="home#" routerLinkActive="active">Home</a></li>
         <li><a href="/" class="nav-link px-2 " routerLink="tv-shows#" routerLinkActive="active">TV-Shows</a></li>
         <li><a href="/" class="nav-link px-2 " routerLink="movies#" routerLinkActive="active">Movie</a></li>
         <li><a href="/" class="nav-link px-2 " routerLink="new#" routerLinkActive="active">Newly Launched</a></li>
-        <li><a href="/" class="nav-link px-2 " routerLink="upcoming#" routerLinkActive="active">Upcoming</a></li>
+        <li><a href="/" class="nav-link px-2 " routerLink="upcoming#" routerLinkActive="active">Upcoming</a></li> -->
       </ul>
       <ul class="d-flex">
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -33,13 +33,17 @@
     <h3 class="text-light">Unlimted movies, TV </h3>
     <h3 class="text-light secContent"> shows, and more.</h3>
     <h6 class="text-light thirdContent"> Watch anywhere. Cancel anytime</h6>
-    <p class="text-light fourthContent"> Ready to watch? Enter your email to create or restart your membership</p> 
+    <p class="text-light fourthContent"> Ready to watch? Enter your email to create or restart your membership</p>
     <span>
-    <input type="search" class="search" placeholder="Enter email address" aria-label="Input group example" aria-describedby="btnGroupAddon">
-    <button class="btn btn-danger input-group-text" id="btnGroupAddon" style="  height: 38px;">get started <i class="fa fa-arrow-right"></i></button>
-  </span>
-  </div>
+      
+      <form #emailValidate="ngForm" (ngSubmit)="emailValidate.form.valid && validateEmail(emailValidate.form.value)">
+        <input type="email" email required class="search" placeholder="Enter email address"
+          aria-label="Input group example" aria-describedby="btnGroupAddon" [(ngModel)]="validateEmailId"
+          name="enteredEmailString">
 
-     
-    
+        <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;">get
+          started <i class="fa fa-arrow-right"></i></button>
+      </form>
+    </span>
   </div>
+</div>

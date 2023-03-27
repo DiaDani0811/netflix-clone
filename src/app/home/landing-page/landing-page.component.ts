@@ -8,18 +8,21 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  redirectToLoginPage()
-  {
+  redirectToLoginPage() {
     this.router.navigateByUrl('login')
   }
-  redirectToSignUpPage()
-  {
+  redirectToSignUpPage() {
     this.router.navigateByUrl('signup')
+  }
+  validateEmailId: string = '';
+
+  validateEmail(enterdString: any) {
+    console.log('enterdString', enterdString);
   }
 
 }

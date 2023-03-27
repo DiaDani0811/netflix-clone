@@ -17,8 +17,6 @@
 .container-xl,
 .container-xxl {
   width: 100%;
-  /* padding-right: var(--bs-gutter-x,.75rem); */
-  /* padding-left: var(--bs-gutter-x,.75rem); */
   margin-right: auto;
   margin-left: 0px;
 }
@@ -30,7 +28,7 @@
   display: flex;
 }
 .image{
-  height: calc(100vh - 90px);
+  height: calc(100vh - 86px);
   width: 100%;
   opacity: 20%;
   background-repeat: no-repeat;
@@ -54,14 +52,18 @@
   width: calc(100% - 30%);
   display: inline-block;
   top: 0;
+  padding-left: 10px;
   
 }
 .search::placeholder{
   text-align: start;
-  padding-left: 10px;
+  
 }
 .search:focus{
-  color: red;
+  background-color: rgb(191, 191, 191);
+  border: none;
+  outline: none;
+  padding-left: 10px;
 }
 #btnGroupAddon{
   position: relative;
