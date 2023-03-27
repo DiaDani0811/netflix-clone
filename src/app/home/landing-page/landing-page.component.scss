@@ -39,5 +39,31 @@
   overflow: auto;
   overflow-wrap: break-word;
   background-repeat: no-repeat;
-
+}
+.centerDiv
+{
+  left: 40%;
+  top: 40%;
+}
+.centerDiv .secContent
+{
+  position: absolute;
+  left: 20px;
+  word-spacing: -3px;
+}
+.centerDiv .thirdContent
+{
+  
+  position: absolute;
+  left: 14px;
+  top: 80px;
+  word-spacing: -1px;
+  
+}
+.centerDiv  .fourthContent
+{
+   
+  position: relative;
+  left: -7rem;
+  top: 71px;
 }
