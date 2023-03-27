@@ -10,7 +10,6 @@
   // -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
 }
 
-.container,
 .container-fluid,
 .container-lg,
 .container-md,
@@ -23,47 +22,52 @@
   margin-right: auto;
   margin-left: 0px;
 }
-
+.containers{
+  width: 100%;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.image{
+  height: calc(100vh - 90px);
+  width: 100%;
+  opacity: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .nav-link {
   color: white;
 }
-
 .active {
   color: red;
   border-bottom: 3px solid red;
 }
-
-.bg-image {
-  width: 100%;
-  opacity: 20%;
-  overflow: auto;
-  overflow-wrap: break-word;
-  background-repeat: no-repeat;
-}
-.centerDiv
-{
-  left: 40%;
-  top: 40%;
-}
-.centerDiv .secContent
-{
+.centerDiv{
+  text-align: center;
+  opacity: 100%;
+  color: white;
   position: absolute;
-  left: 20px;
-  word-spacing: -3px;
 }
-.centerDiv .thirdContent
-{
-  
-  position: absolute;
-  left: 14px;
-  top: 80px;
-  word-spacing: -1px;
+.search{
+  height: 38px;
+  width: calc(100% - 30%);
+  display: inline-block;
+  top: 0;
   
 }
-.centerDiv  .fourthContent
-{
-   
+.search::placeholder{
+  text-align: start;
+  padding-left: 10px;
+}
+.search:focus{
+  color: red;
+}
+#btnGroupAddon{
   position: relative;
-  left: -7rem;
-  top: 71px;
+  z-index: 1;
+  width: 30%;
+  border-radius: 0;
+  top: -3px;
+  height: 38px;
 }
