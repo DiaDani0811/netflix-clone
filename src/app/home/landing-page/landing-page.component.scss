@@ -73,3 +73,41 @@
   top: -3px;
   height: 38px;
 }
+h1{
+  font-size:20px;
+  color: white;
+}
+.fa-eye{
+  position: absolute;
+  left: 85%;
+  top:40%
+}
+.fa-eye-slash{
+  position: absolute;
+  left: 85%;
+  top:40%
+}
+.form-input{
+  background-color: rgb(77, 77, 77);
+  color: white;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.form-input::placeholder{
+  color: rgb(163, 162, 162);
+  font-weight:200;
+  font-size: 14px;
+}
+.form-input:focus{
+  outline: none;
+  border: none;
+}
+.needHelp{
+  text-decoration: none;
+  color: white;
+  font-size:14px;
+}

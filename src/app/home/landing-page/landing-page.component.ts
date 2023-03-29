@@ -12,17 +12,29 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+visible:boolean=false;
 
-  redirectToLoginPage() {
-    this.router.navigateByUrl('login')
-  }
   redirectToSignUpPage() {
-    this.router.navigateByUrl('signup')
+    this.visible = true;
   }
   validateEmailId: string = '';
 
   validateEmail(enterdString: any) {
     console.log('enterdString', enterdString);
   }
-
+  showMask: boolean = true;
+  passwordShow(){
+    var pw = document.getElementsByClassName("input-password")[0];
+    var il = document.getElementById("passwordShow");
+    if(this.showMask === true ){
+      this.showMask = false;
+      pw.setAttribute("type","text");
+      il?.setAttribute("class", "fa fa-eye-slash");
+    }
+    else{
+      this.showMask = true;
+      pw.setAttribute("type","password");
+      il?.setAttribute("class", "fas fa-eye")
+    }
+  }
 }

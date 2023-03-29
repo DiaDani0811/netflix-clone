@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FormsModule } from '@angular/forms';
-
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule
+    FormsModule,
+    DialogModule,
+    
   ]
 })
 export class HomeModule { }

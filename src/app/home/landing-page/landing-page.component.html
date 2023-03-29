@@ -19,8 +19,7 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" (click)="redirectToLoginPage()">Login</button>
-          <button type="button" class="btn btn-danger" (click)="redirectToSignUpPage()">Sign-up</button>
+          <button  class="btn btn-danger" (click)="redirectToSignUpPage()" type="button">Sign-up</button>
         </div>
       </ul>
     </div>
@@ -47,3 +46,26 @@
     </span>
   </div>
 </div>
+
+<p-dialog class="" [(visible)]="visible" [style]="{backgroundColor:'black',opacity:'98%',width:'400px',padding:'15px'}">
+      <h1>Sign In</h1>
+      <div class="card-body">   
+    <form >
+        <div class="mb-3">
+            <input type="email"   class=" form-input" id="email"  placeholder="Enter Username" >
+        </div>
+        <div class="mb-3">
+          <input type="password"class="input-password form-input " id="password" placeholder="Enter Password" >
+          <i class="fas fa-eye" id="passwordShow" (click)="passwordShow()"></i>
+        </div>
+        <!-- <div class="mb-4" id="forgotPassword">
+          <a href="" class="forgotPasswordLink">Forgot Password?</a>
+        </div> -->
+        <button type="submit" class="btn btn-danger w-100 mb-3" >Sign In</button>
+        <div class="registerData mb-5">
+          <input type="checkbox" >
+          <span class="text-light fs-6">Remember me <a class="needHelp fs-6 float-end">Need Help?</a></span>
+        </div>
+      </form>
+    </div>
+</p-dialog> 
