@@ -1,3 +1,9 @@
+body{
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--surface-900);
+color: var(--primary-color-text);
+}
 .active {
   color: red;
   border-bottom: 3px solid;
@@ -75,17 +81,19 @@
 }
 h1{
   font-size:20px;
-  color: white;
+  color: black;
 }
 .fa-eye{
   position: absolute;
   left: 85%;
-  top:40%
+  top: 35%;
+  color: white;
 }
 .fa-eye-slash{
   position: absolute;
   left: 85%;
-  top:40%
+  top: 35%;
+  color: white;
 }
 .form-input{
   background-color: rgb(77, 77, 77);
@@ -110,4 +118,19 @@ h1{
   text-decoration: none;
   color: white;
   font-size:14px;
+}
+.active{
+  background-color: red;
+  height: 800px;
+  width: 350px;
+}
+.errormSG{
+  color: red;
+}
+
+.modal{
+  background-color: black;
+}
+.modal-body{
+  background-color: black;
 }
