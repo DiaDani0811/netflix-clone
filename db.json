@@ -36,6 +36,16 @@
       "email": "",
       "password": "",
       "id": 4
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "email": "accc_admin@solvedge.com",
+      "password": "Demo@123",
+      "id": 6
     }
   ]
 }
