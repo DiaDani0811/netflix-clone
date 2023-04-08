@@ -38,7 +38,7 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css"
-              
+
             ],
             "scripts": []
           },
@@ -76,15 +76,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "options": {
-            "host": "192.168.5.63",
-            "port": 4200
-          },
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "host": "192.168.5.234",
-            "port": 4200
-          },
           "configurations": {
             "production": {
               "browserTarget": "netflix-clone:build:production"
