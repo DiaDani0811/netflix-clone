@@ -34,9 +34,9 @@
     <h6 class="text-light thirdContent"> Watch anywhere. Cancel anytime</h6>
     <p class="text-light fourthContent"> Ready to watch? Enter your email to create or restart your membership</p>
     <span>
-      
+
       <form #emailValidate="ngForm" (ngSubmit)="emailValidate.form.valid && validateEmail(emailValidate.form.value)">
-        <input type="email" email required class="search" placeholder="Enter email address" 
+        <input type="email" email required class="search" placeholder="Enter email address"
           aria-label="Input group example" aria-describedby="btnGroupAddon" [(ngModel)]="validateEmailId"
           name="enteredEmailString">
 

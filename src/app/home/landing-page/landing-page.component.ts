@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+// import { ToastrService } from 'ngx-toastr';
 import { SignUpClass } from 'src/app/model/signup.model';
 import { userService } from 'src/app/service/user.service';
 
@@ -18,8 +19,8 @@ export class LandingPageComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  constructor(private router: Router,private userService:userService) { 
-  
+  constructor(private router: Router,private userService:userService,) {
+
   }
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ signupModal() {
       il?.setAttribute("class", "fas fa-eye")
     }
   }
-  
+
 errorMsg:string="";
 error_Msg:boolean=false;
 signupFormModal:boolean = false;
@@ -73,11 +74,12 @@ else if(!this.SignUpClass.password){
 else{
   this.signup.reset();
   let ref = document.getElementById('cancel')
-  ref?.click();   
+  ref?.click();
+  // this.toastService.success("Registered Successfully","Start")
 }
   }
-    
-  
+
+
 
 })}
 }
