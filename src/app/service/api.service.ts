@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpParams,HttpHeaders} from '@angular/common/http'
 import { environment } from 'src/environments/environment';
+import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,10 +14,12 @@ export class ApiService {
     return res;
    })
   }
-  get(path: string, params:URLSearchParams =new URLSearchParams()){
-    return this.http.get(`${environment.JsonserverSwags}${path}`).pipe(res=>{
-      return res;
-    })
+  private formatErrors(error: any) {  
+    return  throwError(error.error);
+  }
+  get(path: string, params: HttpParams = new HttpParams()): Observable<any>{
+    let headers = new HttpHeaders
+    return this.http.get(`${environment.JsonserverSwags}${path}`,{params,headers:headers}).pipe(catchError(this.formatErrors));
   }
   update(path: string, body: Object={}){
     return this.http.put(`${environment.JsonserverSwags}${path}`,body).pipe(res=>{
