@@ -4,6 +4,7 @@
 
 export const environment = {
   JsonserverSwags:"http://localhost:3000",
+  // api_Url : "192.168.0.107 ",
   production: false
 };
 

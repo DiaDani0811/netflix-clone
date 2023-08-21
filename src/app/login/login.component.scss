@@ -1,0 +1,20 @@
+.image{
+    background:url('../../assets/images/collage-Movies.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;  
+}
+.loginForm{
+    height: 400px;
+    width: 300px;
+    background: black;
+    position: relative;
+    border-radius:5px ;
+    // opacity: 85%;
+}
