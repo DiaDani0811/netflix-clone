@@ -13,7 +13,7 @@ export class userService {
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
   constructor(private api:ApiService) { }
   postSignup(data:any){
-  return this.api.post('/signup',data).pipe(res=>{
+  return this.api.post('/newUser',data).pipe(res=>{
     return res
    })
   }
