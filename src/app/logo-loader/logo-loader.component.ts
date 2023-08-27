@@ -12,7 +12,7 @@ export class LogoLoaderComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(()=>{
-      this.router.navigate(['home'])
+      this.router.navigate(['auth'])
     },5000)
   }
 
