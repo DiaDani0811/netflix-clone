@@ -134,3 +134,20 @@ h1{
 .modal-body{
   background-color: black;
 }
+.close{
+  border: none;
+  background-color: #212529 !important;
+  font-weight: 800;
+}
+.close{
+  border: none;
+  background-color: #212529 !important;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+
+::ng-deep .custom-style{
+  background-color:brown;
+  color:white;
+}

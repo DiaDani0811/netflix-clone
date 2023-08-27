@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 import { SignUpClass } from 'src/app/model/signup.model';
 import { userService } from 'src/app/service/user.service';
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 
 @Component({
@@ -20,7 +21,7 @@ export class AuthComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
-  constructor(private router: Router,private userService:userService,) {
+  constructor(private router: Router,private userService:userService,private snackBar: MatSnackBar) {
 
   }
 
@@ -60,16 +61,17 @@ this.SignUpClass.email = this.signup.value.email;
 this.SignUpClass.password = this.signup.value.password;
 this.userService.postSignup(this.SignUpClass).subscribe(res=>{
   if(res){
-    if(!this.SignUpClass){
-      this.errorMsg="Enter any Details"
+
+    if(!this.SignUpClass.email && !this.SignUpClass.password ){
+      this.errorMsg="Enter any Details *"
       this.error_Msg=true
     }
-    else if(!this.SignUpClass.email){
-      this.errorMsg="Enter Valid Email"
+else if(!this.SignUpClass.email){
+      this.errorMsg="Enter Valid Email *"
       this.error_Msg=true
 }
 else if(!this.SignUpClass.password){
-      this.errorMsg="Enter Valid Password"
+      this.errorMsg="Enter Valid Password *"
       this.error_Msg = true
 }
 else{
@@ -77,10 +79,12 @@ else{
   let ref = document.getElementById('cancel')
   ref?.click();
   // this.toastService.success("Registered Successfully","Start")
-}
-  }
-
-
-
+  this.showSnackbar("Registered Successfiully ...", "Undo")
+}}
 })}
+
+showSnackbar(content:any,action :any){
+  this.snackBar.open(content,action,
+    { duration: 2000});
+}
 }

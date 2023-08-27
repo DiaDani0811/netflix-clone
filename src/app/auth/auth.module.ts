@@ -7,7 +7,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { DialogModule } from 'primeng/dialog';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    DialogModule
+    DialogModule,
+    MatSnackBarModule
   ]
 })
 export class AuthModule { }

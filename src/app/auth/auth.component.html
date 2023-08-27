@@ -45,7 +45,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body">
-        <button type="button" id="cancel" class="close float-end bg-dark text-light border-none" data-bs-dismiss="modal">&times;</button>
+        <button type="button" id="cancel" class="close float-end  text-danger" data-bs-dismiss="modal">&times;</button>
         <form [formGroup]="signup" class="bg-dark p-4">
             <div class="mb-3">
                 <input type="email" class="form-input" id="email" formControlName="email" placeholder="Enter Username" >
@@ -55,14 +55,14 @@
               <i class="fas fa-eye" id="passwordShow" (click)="passwordShow()"></i>
             </div>
             <div class="mb-3 errormSG surface-900">
-              <p *ngIf="error_Msg">{{errorMsg}}</p>
+              <p *ngIf="error_Msg" class="text-danger">{{errorMsg}}</p>
             </div>
-            <button type="submit" class="btn btn-danger w-100 mb-3" (click)="signupForm()">Sign In</button>
+            <button type="submit" class="btn btn-danger w-100 mb-3" (click)="signupForm();">Sign In</button>
             <div class="registerData mb-5">
               <input type="checkbox" >
               <span class="text-light fs-6">Remember me <a class="needHelp fs-6 float-end">Need Help?</a></span>
             </div>
-          </form>
+        </form>
       </div>
     </div>
   </div>
