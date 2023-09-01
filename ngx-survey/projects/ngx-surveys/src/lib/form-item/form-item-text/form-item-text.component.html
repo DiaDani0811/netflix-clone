@@ -1,6 +1,8 @@
 
+<!-- <input type="text" class="formcontrol"  [disabled]="!editable" [attr.id]="item.name" [placeholder]="item.label.length<maxLabelLength ? item.label : ''" [(ngModel)]="item.value" (ngModelChange)="onValueChanges(item)"  [required]="item.required" > -->
 <mat-form-field class="example-full-width">
     <label class="long-label-text" *ngIf="item.label.length>=maxLabelLength" [ngClass]="{'has-error':item.errors && item.errors.length}">{{item.label}} <span *ngIf="item.required" class="required-asterix">*</span></label>
+  
     <textarea matInput
         [disabled]="!editable"
         [attr.id]="item.name"
@@ -20,3 +22,4 @@
 
 </mat-form-field>
 <small class="long-hint" *ngIf="!(item.errors && item.errors.length) && item.hint?.length >= maxLabelLength"><strong>{{item.hint}}</strong> </small>
+{{item.value | json}}
