@@ -1,5 +1,26 @@
 {
   "existingUserEmail": [],
-  "newUser": [],
+  "newUser": [
+    {
+      "email": "asdasd",
+      "password": "",
+      "id": 1
+    },
+    {
+      "email": "asdasd",
+      "password": "asdasd",
+      "id": 2
+    },
+    {
+      "email": "asdasd@sdf.com",
+      "password": "sdfsdfsdf",
+      "id": 3
+    },
+    {
+      "email": "asd",
+      "password": "asd",
+      "id": 4
+    }
+  ],
   "existingUserallData": []
 }

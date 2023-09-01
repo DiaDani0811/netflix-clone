@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignInComponent } from './sign-in.component';
+import { FileListItemImageComponent } from './file-list-item-image.component';
 
-describe('SignInComponent', () => {
-  let component: SignInComponent;
-  let fixture: ComponentFixture<SignInComponent>;
+describe('FileListItemImageComponent', () => {
+  let component: FileListItemImageComponent;
+  let fixture: ComponentFixture<FileListItemImageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignInComponent ]
+      declarations: [ FileListItemImageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignInComponent);
+    fixture = TestBed.createComponent(FileListItemImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

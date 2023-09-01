@@ -30,13 +30,10 @@
     <p class="text-light fourthContent"> Ready to watch? Enter your email to create or restart your membership</p>
     <span>
 
-      <form #emailValidate="ngForm" (ngSubmit)="emailValidate.form.valid && validateEmail(emailValidate.form.value)">
-        <input type="email" email required class="search" placeholder="Enter email address"
-          aria-label="Input group example" aria-describedby="btnGroupAddon" [(ngModel)]="validateEmailId"
-          name="enteredEmailString">
-
-        <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;">get
-          started <i class="fa fa-arrow-right"></i></button>
+      <form [formGroup]="emailValidate" (ngSubmit)="validateEmail()">
+        <input type="email" class="search" placeholder="Enter email address" formControlName="newEmail" >
+        <span *ngIf="showError('newEmail')">{{getEmailValidationMessage()}}</span>
+        <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;"  >get started <i class="fa fa-arrow-right"></i></button>
       </form>
     </span>
   </div>

@@ -78,6 +78,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "host": "192.168.5.234",
+            "port": 7171
+          },
           "configurations": {
             "production": {
               "browserTarget": "netflix-clone:build:production"

@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 import { SignUpClass } from 'src/app/model/signup.model';
 import { userService } from 'src/app/service/user.service';
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { getMaxListeners } from 'process';
+import { Observable } from 'rxjs';
+import { AbstractControl } from '@angular/forms';
 
 
 @Component({
@@ -14,28 +17,47 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 })
 export class AuthComponent implements OnInit {
   @ViewChild('closebutton') closebutton:any;
+  emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   SignUpClass = new SignUpClass()
 
   signup = new FormGroup({
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required,Validators.pattern(this.emailregex)]),
     password: new FormControl('', Validators.required)
   })
-
-  constructor(private router: Router,private userService:userService,private snackBar: MatSnackBar) {
-
+  
+  constructor(private router: Router,private userService:userService,private snackBar: MatSnackBar,private fb : FormBuilder) {
+   
   }
-
+  emailValidate :FormGroup = this.fb.group(
+    { newEmail: ["",[Validators.required,Validators.pattern(this.emailregex)],this.checkInUseEmail]
+    }
+    );
+  controls = {
+    email: this.emailValidate.get("newEmail"),
+  };
+  checkInUseEmail(control:any){
+    let db = ["vignesh@gmail.com"];
+    return new Observable(observer=>{
+      setTimeout(()=>{
+         let result = db.indexOf(control.value) !== -1 ? {alreadyInUse:true} : null
+         observer.next(result);
+         observer.complete();
+      },2000)
+    });
+  }
   ngOnInit(): void {
   }
+
+  
 visible:boolean=false;
 
 signInModal() {
     this.visible = true;
   }
-  validateEmailId: string = '';
+  signupEmailId: string = '';
 
-  validateEmail(enterdString: any) {
-    console.log('enterdString', enterdString);
+  validateEmail() {
+    this.router.navigate([''])
   }
   showMask: boolean = true;
   passwordShow(){
@@ -87,4 +109,31 @@ showSnackbar(content:any,action :any){
   this.snackBar.open(content,action,
     { duration: 2000});
 }
+
+messageContentForEmail(){
+ return {
+   email:{ 
+     required: "Please Provide a email",
+     pattern: "Not a valid email address",
+     alreadyUsed: "This emailaddress is already in use"}
+    }
+  }
+getEmailValidationMessage(){
 }
+showError(controlName: String){
+  return this.hasVisibleError(this.emailValidate.controls['newEmail']);
+}
+private hasVisibleError(control: AbstractControl): boolean {
+  return control.invalid && (control.dirty || control.touched);
+}
+getErrotEmail() {
+  let emailControl = this.controls.email;
+//   return emailControl.hasError("required")
+//     ? this.messageContentForEmail().email.required
+//     : emailControl.hasError("pattern")
+//     ? this.messageContentForEmail().email.pattern
+//     : emailControl.hasError("alreadyInUse")
+//     ? this.messageContentForEmail().email.alreadyUsed
+//     : "";
+// }
+}}
