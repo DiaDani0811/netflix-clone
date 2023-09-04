@@ -13,7 +13,7 @@
          <mat-card-header class="section-header">
           <mat-card-title class="section-title">
             <div class="section-title-text">
-                <span [ngClass]="'section-style-'+section.sectionStyle">Q {{section.title}}</span>
+                <span [ngClass]="'section-style-'+section.sectionStyle" [innerHtml]="section.title"></span>
             </div>
 
             <button mat-icon-button class="form-item-actions-button" aria-label="Toggle menu"
@@ -21,7 +21,7 @@
                 matTooltipPosition="above"
                 (click)="openSectionDialog(section)"
             >
-              <mat-icon style="color: rgb(0, 132, 255);" >edit</mat-icon>
+              <mat-icon>edit</mat-icon>
             </button>
              <button mat-icon-button class="form-item-actions-button " aria-label="Toggle menu"
                 matTooltip="Delete Section"
@@ -29,7 +29,7 @@
                 (click)="removeSection(section)"
                 [disabled]="readOnly"
             >
-              <mat-icon style="color: red;" >delete</mat-icon>
+              <mat-icon>delete</mat-icon>
             </button>
             <!--
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
@@ -117,7 +117,7 @@
             </div>
         <div class="add-item-button"
         >
-            <button mat-stroked-button color="primary" (click)="addField(section)" [disabled]="readOnly">Add Field</button>
+            <button mat-stroked-button color="primary" (click)="addFeild(section)" [disabled]="readOnly">Add Field</button>
         </div>
         <!--
             <button mat-icon-button class="add-item-button" aria-label="Toggle menu">

@@ -235,7 +235,7 @@ export class FormBuilderComponent implements OnInit {
         this.changes.emit(this.form);
     }
 
-    addField(section: FormSection): void {
+    addFeild(section: FormSection): void {
         if (!section.items){
             section.items=[];
         }

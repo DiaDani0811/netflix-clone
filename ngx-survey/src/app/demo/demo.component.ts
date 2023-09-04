@@ -37,7 +37,7 @@ export class DemoComponent implements OnInit, OnDestroy {
     private fileUpoadSubscription: Subscription;
 
     get submitDisabled(): boolean {
-        return !!this.form.find(section=>section.items.some(item=>item));
+        return !!this.form.find(section=>section.items.some(item=>item.busy));
     }
 
     constructor(
