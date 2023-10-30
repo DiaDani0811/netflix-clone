@@ -24,9 +24,9 @@ export class AuthComponent implements OnInit {
     email: new FormControl('', [Validators.required,Validators.pattern(this.emailregex)]),
     password: new FormControl('', Validators.required)
   })
-  
+
   constructor(private router: Router,private userService:userService,private snackBar: MatSnackBar,private fb : FormBuilder) {
-   
+
   }
   emailValidate :FormGroup = this.fb.group(
     { newEmail: ["",[Validators.required,Validators.pattern(this.emailregex)],this.checkInUseEmail]
@@ -39,8 +39,8 @@ export class AuthComponent implements OnInit {
     let db = ["vignesh@gmail.com"];
     return new Observable(observer=>{
       setTimeout(()=>{
-         let result = db.indexOf(control.value) !== -1 ? {alreadyInUse:true} : null
-         observer.next(result);
+
+         observer.next(db.indexOf(control.value) !== -1 ? {alreadyInUse:true} : null);
          observer.complete();
       },2000)
     });
@@ -48,7 +48,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
 visible:boolean=false;
 
 signInModal() {
@@ -112,7 +112,7 @@ showSnackbar(content:any,action :any){
 
 messageContentForEmail(){
  return {
-   email:{ 
+   email:{
      required: "Please Provide a email",
      pattern: "Not a valid email address",
      alreadyUsed: "This emailaddress is already in use"}
