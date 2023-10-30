@@ -28,14 +28,7 @@
     <h3 class="text-light secContent"> shows, and more.</h3>
     <h6 class="text-light thirdContent"> Watch anywhere. Cancel anytime</h6>
     <p class="text-light fourthContent"> Ready to watch? Enter your email to create or restart your membership</p>
-    <span>
-
-      <form [formGroup]="emailValidate" (ngSubmit)="validateEmail()">
-        <input type="email" class="search" placeholder="Enter email address" formControlName="newEmail" >
-        <span *ngIf="showError('newEmail')">{{getEmailValidationMessage()}}</span>
-        <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;"  >get started <i class="fa fa-arrow-right"></i></button>
-      </form>
-    </span>
+    <app-sign-up></app-sign-up>
   </div>
 </div>
 <div class="modal fade " id="exampleModal" aria-hidden="true" tabindex="-1" aria-labelledby="...">

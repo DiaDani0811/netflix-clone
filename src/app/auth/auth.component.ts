@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 import { SignUpClass } from 'src/app/model/signup.model';
 import { userService } from 'src/app/service/user.service';
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { getMaxListeners } from 'process';
 import { Observable } from 'rxjs';
 import { AbstractControl } from '@angular/forms';
@@ -24,9 +23,9 @@ export class AuthComponent implements OnInit {
     email: new FormControl('', [Validators.required,Validators.pattern(this.emailregex)]),
     password: new FormControl('', Validators.required)
   })
-
-  constructor(private router: Router,private userService:userService,private snackBar: MatSnackBar,private fb : FormBuilder) {
-
+  
+  constructor(private router: Router,private userService:userService,private fb : FormBuilder) {
+   
   }
   emailValidate :FormGroup = this.fb.group(
     { newEmail: ["",[Validators.required,Validators.pattern(this.emailregex)],this.checkInUseEmail]
@@ -39,8 +38,8 @@ export class AuthComponent implements OnInit {
     let db = ["vignesh@gmail.com"];
     return new Observable(observer=>{
       setTimeout(()=>{
-
-         observer.next(db.indexOf(control.value) !== -1 ? {alreadyInUse:true} : null);
+         let result = db.indexOf(control.value) !== -1 ? {alreadyInUse:true} : null
+         observer.next(result);
          observer.complete();
       },2000)
     });
@@ -48,16 +47,11 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  
 visible:boolean=false;
 
 signInModal() {
     this.visible = true;
-  }
-  signupEmailId: string = '';
-
-  validateEmail() {
-    this.router.navigate([''])
   }
   showMask: boolean = true;
   passwordShow(){
@@ -81,7 +75,7 @@ signupFormModal:boolean = false;
 signupForm(){
 this.SignUpClass.email = this.signup.value.email;
 this.SignUpClass.password = this.signup.value.password;
-this.userService.postSignup(this.SignUpClass).subscribe(res=>{
+this.userService.newUserLogin(this.SignUpClass).subscribe(res=>{
   if(res){
 
     if(!this.SignUpClass.email && !this.SignUpClass.password ){
@@ -101,18 +95,15 @@ else{
   let ref = document.getElementById('cancel')
   ref?.click();
   // this.toastService.success("Registered Successfully","Start")
-  this.showSnackbar("Registered Successfiully ...", "Undo")
+  // this.showSnackbar("Registered Successfiully ...", "Undo")
 }}
 })}
 
-showSnackbar(content:any,action :any){
-  this.snackBar.open(content,action,
-    { duration: 2000});
-}
+
 
 messageContentForEmail(){
  return {
-   email:{
+   email:{ 
      required: "Please Provide a email",
      pattern: "Not a valid email address",
      alreadyUsed: "This emailaddress is already in use"}

@@ -1,26 +1,10 @@
 {
-  "existingUserEmail": [],
+  "existingUser": [
+  ],
   "newUser": [
     {
-      "email": "asdasd",
-      "password": "",
+      "newUser": "dineshnetflix@gmail.in",
       "id": 1
-    },
-    {
-      "email": "asdasd",
-      "password": "asdasd",
-      "id": 2
-    },
-    {
-      "email": "asdasd@sdf.com",
-      "password": "sdfsdfsdf",
-      "id": 3
-    },
-    {
-      "email": "asd",
-      "password": "asd",
-      "id": 4
     }
-  ],
-  "existingUserallData": []
+  ]
 }

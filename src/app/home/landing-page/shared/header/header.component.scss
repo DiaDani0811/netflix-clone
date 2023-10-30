@@ -1,0 +1,28 @@
+.active{
+    color :#fff;
+}
+.nav-link{
+  color: lightgray;
+}
+.profile{
+  position: relative;
+  padding-top:18px;
+  cursor: pointer;
+  width: 25%;
+}
+
+
+.profile-icon{
+    margin-left: 10px;   
+}
+.dropdown-menu{
+    background-color: rgb(37, 33, 33);
+}
+.dropdown-item:hover,.dropdown-item:focus{
+    background-color: black;
+    color: white;
+    opacity: 100%;
+}
+.dropdown-divider{
+    color: white;
+}

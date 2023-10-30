@@ -12,7 +12,8 @@ export class userService {
   private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   public isAuthenticated = this.isAuthenticatedSubject.asObservable();
   constructor(private api:ApiService) { }
-  postSignup(data:any){
+
+  newUserLogin(data:any){
   return this.api.post('/newUser',data).pipe(res=>{
     return res
    })

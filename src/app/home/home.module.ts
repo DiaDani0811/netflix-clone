@@ -7,8 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 @NgModule({
   declarations: [
-    LandingPageComponent,
-
   ],
   imports: [
     CommonModule,

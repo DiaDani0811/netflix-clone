@@ -1,0 +1,32 @@
+<nav>
+    <ul class="nav">
+        <li class="nav-item " >
+            <img src="../../../../../assets/images/Netflix-logo-red-black-png.png" class="d-inline-block" height="72" width="200" alt="">
+        </li>
+        <li class="nav-item mt-3 " *ngFor="let data of headerData"  >
+            <a href="javascript:void(0)" class="nav-link" routerLink="{{data.router}}" routerLinkActive="active" >
+                {{data.link}}
+            </a>
+        </li>
+        <!-- <li class="nav-item profile dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="profile-image" src="../../../../../assets/images/collage-Movies.jpg" height="20" width="20" alt="">
+            <i class="profile-icon text-light"></i>
+        </li> -->
+        <ul class="dropdown-menu ">
+            <li>     
+                <a class="dropdown-item nav-link" href="#">
+                    <img class="profile-image" src="../../../../../assets/images/collage-Movies.jpg" height="20" width="20" alt="">&nbsp;&nbsp;&nbsp;Profile
+                </a>
+            </li>
+            <li><a class="dropdown-item nav-link" href="#" >Manage profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item nav-link" href="#">Account</a></li>
+            <li><a class="dropdown-item nav-link" href="#">Help Center</a></li>
+            <li><a class="dropdown-item nav-link" href="#">Sign out of Netflix</a></li>
+        </ul>
+    </ul>
+   
+</nav>
+<ng-template *ngIf="">
+
+</ng-template>
