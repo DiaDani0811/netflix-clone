@@ -1,0 +1,1 @@
+const neArr = [...arr.filter((data)=>data.type === selectedValue).reduce((map,obj)=> map.set(obj.name,{value:obj.value,label:obj.value}),new Map()).values()]
