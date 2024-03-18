@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
-import { SignUpClass } from 'src/app/model/signup.model';
-import { userService } from 'src/app/service/user.service';
+import { SignUpClass } from 'src/app/shared/models/signup.model';
+import { userService } from 'src/app/shared/services/user.service';
 import { getMaxListeners } from 'process';
 import { Observable } from 'rxjs';
 import { AbstractControl } from '@angular/forms';
@@ -75,29 +75,36 @@ signupFormModal:boolean = false;
 signupForm(){
 this.SignUpClass.email = this.signup.value.email;
 this.SignUpClass.password = this.signup.value.password;
-this.userService.newUserLogin(this.SignUpClass).subscribe(res=>{
-  if(res){
+if(this.SignUpClass.email && this.SignUpClass.password){
+  this.userService.newUserLogin(this.SignUpClass).subscribe(res=>{
+    if(res){
+      this.router.navigateByUrl('/home')
+      if(!this.SignUpClass.email && !this.SignUpClass.password ){
+        this.errorMsg="Enter any Details *"
+        this.error_Msg=true
+      }
+  else if(!this.SignUpClass.email){
+        this.errorMsg="Enter Valid Email *"
+        this.error_Msg=true
+  }
+  else if(!this.SignUpClass.password){
+        this.errorMsg="Enter Valid Password *"
+        this.error_Msg = true
+  }
+  else{
+    this.signup.reset();
+    // let ref = document.getElementById('cancel')
+    // ref?.click();
+    // this.toastService.success("Registered Successfully","Start")
+    // this.showSnackbar("Registered Successfiully ...", "Undo")
+  }}
+  })
+  
+}else{
+  this.errorMsg="Enter Some data"
+}
 
-    if(!this.SignUpClass.email && !this.SignUpClass.password ){
-      this.errorMsg="Enter any Details *"
-      this.error_Msg=true
-    }
-else if(!this.SignUpClass.email){
-      this.errorMsg="Enter Valid Email *"
-      this.error_Msg=true
 }
-else if(!this.SignUpClass.password){
-      this.errorMsg="Enter Valid Password *"
-      this.error_Msg = true
-}
-else{
-  this.signup.reset();
-  let ref = document.getElementById('cancel')
-  ref?.click();
-  // this.toastService.success("Registered Successfully","Start")
-  // this.showSnackbar("Registered Successfiully ...", "Undo")
-}}
-})}
 
 
 
@@ -127,4 +134,6 @@ getErrotEmail() {
 //     ? this.messageContentForEmail().email.alreadyUsed
 //     : "";
 // }
-}}
+}
+
+}

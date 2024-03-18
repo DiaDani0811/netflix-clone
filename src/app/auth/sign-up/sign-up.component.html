@@ -3,8 +3,7 @@
       <input type="email" email required class="search" placeholder="Enter email address" #newEmailValidate="ngModel"
         aria-label="Input group example" aria-describedby="btnGroupAddon" [(ngModel)]="validateEmailId"
         name="newUserEmail"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
-      <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;">get
-        started <i class="fa fa-arrow-right"></i></button>
+      <button class="btn btn-danger input-group-text" id="btnGroupAddon" type="submit" style="height: 38px;">get started <i class="fa fa-arrow-right"></i></button>
         <div>
             <span *ngIf="newEmailValidate.errors?.['pattern']">Enter valid email</span>
         </div>

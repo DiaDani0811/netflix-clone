@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LogoLoaderComponent } from './logo-loader/logo-loader.component';
+import { HeloworldComponent } from './heloworld/heloworld.component';
 
 const routes: Routes = [
-{path:'', redirectTo:'Loading', pathMatch:'full'},
+// {path:'', redirectTo:'Loading', pathMatch:'full'},
+{path:'',component:HeloworldComponent},
 {path:'Loading',component:LogoLoaderComponent},
 
 {path:'home',loadChildren:() =>import('../app/home/home.module').then(module=>module.HomeModule)},

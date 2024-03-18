@@ -1,10 +1,56 @@
 {
-  "existingUser": [
-  ],
+  "existingUser": [],
   "newUser": [
     {
       "newUser": "dineshnetflix@gmail.in",
       "id": 1
+    },
+    {
+      "email": "jayakumar.s@solvedge.in",
+      "password": "Demo@123",
+      "id": 2
+    },
+    {
+      "newUser": "vignesh@mail.com",
+      "id": 3
+    },
+    {
+      "newUser": "vignesh@mail.com",
+      "id": 4
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "email": "asd",
+      "password": "sd",
+      "id": 6
+    },
+    {
+      "email": "dfsdf",
+      "password": "sdfsdf",
+      "id": 7
+    },
+    {
+      "newUser": "vignesh@mail.com",
+      "id": 8
+    },
+    {
+      "email": "vignesh@gmailcom",
+      "password": "pubg@123",
+      "id": 9
+    },
+    {
+      "email": "vignesh@mailcom",
+      "password": "pubg@123",
+      "id": 10
+    },
+    {
+      "email": "vignesh@mailcom",
+      "password": "pubg@123",
+      "id": 11
     }
   ]
 }
