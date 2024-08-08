@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  JsonserverSwags:"http://localhost:3000",
   // api_Url : "192.168.0.107 ",
-  api : "http://192.168.5.234:8989",
+  api_url : "http://192.168.0.108:8082",
+  timeInterval : 60000,
   production: false
 };
 
