@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 import { SignUpClass } from 'src/app/shared/models/signup.model';
@@ -19,15 +19,15 @@ export class AuthComponent implements OnInit {
   emailregex: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   SignUpClass = new SignUpClass()
 
-  signup = new FormGroup({
-    email: new FormControl('', [Validators.required,Validators.pattern(this.emailregex)]),
-    password: new FormControl('', Validators.required)
+  signup = new UntypedFormGroup({
+    email: new UntypedFormControl('', [Validators.required,Validators.pattern(this.emailregex)]),
+    password: new UntypedFormControl('', Validators.required)
   })
   
-  constructor(private router: Router,private userService:userService,private fb : FormBuilder) {
+  constructor(private router: Router,private userService:userService,private fb : UntypedFormBuilder) {
    
   }
-  emailValidate :FormGroup = this.fb.group(
+  emailValidate :UntypedFormGroup = this.fb.group(
     { newEmail: ["",[Validators.required,Validators.pattern(this.emailregex)],this.checkInUseEmail]
     }
     );
